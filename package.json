@@ -21,9 +21,6 @@
   },
   "homepage": "https://github.com/Meetyouafter/frontend-project-lvl2#readme",
   "dependencies": {
-    "command": "^0.0.5",
-    "commander": "^9.4.0",
-    "eslint": "^8.23.0",
-    "lodash": "^4.17.21"
+    "command": "^0.0.5"
   }
 }
