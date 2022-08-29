@@ -2,12 +2,17 @@
  
 import { program } from 'commander';
 import path from 'path';
-import { readFileSync } from  'node:fs';
+import { readFileSync } from  'fs';
+import { cwd } from 'process';
+
+console.log(cwd().split('/')[cwd().split('/').length - 1]);
 
 const getFilesDifference = (file1, file2) => {
-  
-const filepath1 = path.resolve('file1.json');
-const filepath2 = path.resolve('file2.json');
+
+const filepath1 = () => {
+  path.resolve('bin/file1.json');
+}
+const filepath2 = path.resolve('bin/file2.json');
 
 const dataOfFile1 = JSON.parse(readFileSync(filepath1));
 const dataOfFile2 = JSON.parse(readFileSync(filepath2));
