@@ -9,13 +9,35 @@ console.log(cwd().split('/')[cwd().split('/').length - 1]);
 
 const getFilesDifference = (file1, file2) => {
 
-const filepath1 = () => {
-  path.resolve('bin/file1.json');
-}
-const filepath2 = path.resolve('bin/file2.json');
+  const getFilePath1 = () => {
+    let filepath1 = '';
+ if (cwd().split('/')[cwd().split('/').length - 1] === 'bin') {
+  filepath1 = path.resolve('file1.json');
+ }
 
-const dataOfFile1 = JSON.parse(readFileSync(filepath1));
-const dataOfFile2 = JSON.parse(readFileSync(filepath2));
+ if (cwd().split('/')[cwd().split('/').length - 1] !== 'bin') {
+  filepath1 = path.resolve('bin/file1.json');
+ }
+
+  return filepath1
+ }
+
+ const getFilePath2 = () => {
+  let filepath2 = '';
+if (cwd().split('/')[cwd().split('/').length - 1] === 'bin') {
+filepath2 = path.resolve('file2.json');
+}
+
+if (cwd().split('/')[cwd().split('/').length - 1] !== 'bin') {
+filepath2 = path.resolve('bin/file2.json');
+}
+
+return filepath2
+}
+
+
+const dataOfFile1 = JSON.parse(readFileSync(getFilePath1()));
+const dataOfFile2 = JSON.parse(readFileSync(getFilePath2()));
 
 const copyOfFile1ForMerge = Object.assign({}, dataOfFile1);
 const mergedFilesData = Object.assign(copyOfFile1ForMerge, dataOfFile2);
