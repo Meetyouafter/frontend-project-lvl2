@@ -1,5 +1,3 @@
-#!/usr/bin/env node 
-import { program } from 'commander';
 import path from 'path';
 import { readFileSync } from 'fs';
 import { cwd } from 'process';
@@ -7,6 +5,7 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
 const getFilesDifference = (file1, file2) => {
+  
   const fileName1 = 'file1.json';
   const fileName2 = 'file2.json';
 
@@ -37,14 +36,5 @@ const getFilesDifference = (file1, file2) => {
   console.log(`{${result}\n}`);
   return `{${result}\n}`;
 };
-
-program
-  .version('0.0.1')
-  .argument('<filepath1> <filepath2>')
-  .description('Compares two configuration files and shows a difference.')
-  .option('-f, --format <type>', 'output format')
-  .action(getFilesDifference)
-
-program.parse();
 
 export { getFilesDifference };
