@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/Meetyouafter/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/Meetyouafter/frontend-project-lvl2/actions)",
   "bin": {
-    "gendiff": "bin/gendiff.js"
+    "gendiff": "__fixtures__/gendiff.js"
   },
   "main": "gendiff.js",
-    "scripts": {
-      "test": "jest"
-    },
+  "scripts": {
+    "test": "npx jest"
+  },
   "repository": {
-    "type": "module",
+    "type": "git",
     "url": "git+https://github.com/Meetyouafter/frontend-project-lvl2.git"
   },
   "author": "",
@@ -25,6 +25,7 @@
     "commander": "^9.4.0"
   },
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.18.6",
     "eslint": "^8.23.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
