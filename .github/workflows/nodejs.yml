@@ -1,9 +1,9 @@
 name: frontend-project-lvl2
 on: push
 jobs:
-runs-on: ubuntu-latest
-steps:
-- uses: actions/checkout@v2
-
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
       - run: make lint
       - run: make test
