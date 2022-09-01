@@ -5,4 +5,4 @@
 
 <a href="https://codeclimate.com/github/Meetyouafter/frontend-project-lvl2/test_coverage"><img src="https://api.codeclimate.com/v1/badges/ac7f02a9bf1ff85dc58e/test_coverage" /></a>
 
-[![Node.js Package](https://github.com/Meetyouafter/frontend-project-lvl2/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/Meetyouafter/frontend-project-lvl2/actions/workflows/npm-publish.yml)
+[![Node.js CI](https://github.com/Meetyouafter/frontend-project-lvl2/actions/workflows/node.js.yml/badge.svg)](https://github.com/Meetyouafter/frontend-project-lvl2/actions/workflows/node.js.yml)
