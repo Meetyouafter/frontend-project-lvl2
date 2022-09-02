@@ -1,4 +1,4 @@
-import { getFilesDifference } from '../__fixtures__/getDifferense.js';
+import getFilesDifference from '../__fixtures__/getDifferense.js';
 
 const result = getFilesDifference('file1.json', 'file2.json');
 const actualData = `{

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { program } from 'commander';
-import { getFilesDifference } from '../__fixtures__/getDifferense.js';
+import getFilesDifference from '../__fixtures__/getDifferense.js';
 
 program
   .version('0.0.1')
