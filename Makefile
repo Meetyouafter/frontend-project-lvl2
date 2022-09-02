@@ -1,11 +1,11 @@
 install:
-    npm init
+	npm init
 
 lint:
 	npx eslint
 
 test:
-    npx jest
+	npx jest
 
 test-coverage:
 	npm test -- --coverage --coverageProvider=v8
