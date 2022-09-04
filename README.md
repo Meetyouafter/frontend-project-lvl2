@@ -8,3 +8,8 @@
 [![Node.js CI](https://github.com/Meetyouafter/frontend-project-lvl2/actions/workflows/node.js.yml/badge.svg)](https://github.com/Meetyouafter/frontend-project-lvl2/actions/workflows/node.js.yml)
 
 [![Build Status](https://app.travis-ci.com/Meetyouafter/frontend-project-lvl2.svg?branch=main)](https://app.travis-ci.com/Meetyouafter/frontend-project-lvl2)
+
+
+
+
+<a href="https://asciinema.org/a/spJziyuDXq9yqIuZj8EyknBbS" target="_blank"><img src="https://asciinema.org/a/spJziyuDXq9yqIuZj8EyknBbS.svg" /></a>
