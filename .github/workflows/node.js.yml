@@ -33,4 +33,5 @@ jobs:
     - run: make lint
     - run: make test
     - run: make test-coverage
-    
+      with:
+            TEST_COVERAGE: ${{ secrets.TEST_COVERAGE }}
