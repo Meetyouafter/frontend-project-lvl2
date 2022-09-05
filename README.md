@@ -11,5 +11,8 @@
 
 
 
-
+<b>Example with JSON file</b>
 <a href="https://asciinema.org/a/spJziyuDXq9yqIuZj8EyknBbS" target="_blank"><img src="https://asciinema.org/a/spJziyuDXq9yqIuZj8EyknBbS.svg" /></a>
+
+<b>Example with yml file</b>
+<a href="https://asciinema.org/a/dQD5aqYICBO91fZzwLETTWIan" target="_blank"><img src="https://asciinema.org/a/dQD5aqYICBO91fZzwLETTWIan.svg" /></a>

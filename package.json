@@ -22,7 +22,9 @@
   "homepage": "https://github.com/Meetyouafter/frontend-project-lvl2#readme",
   "dependencies": {
     "command": "^0.0.5",
-    "commander": "^9.4.0"
+    "commander": "^9.4.0",
+    "js-yaml": "^4.1.0",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.18.6",
