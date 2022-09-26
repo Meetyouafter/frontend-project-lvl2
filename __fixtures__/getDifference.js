@@ -22,7 +22,6 @@ const getFilesDifference = (filepath1, filepath2) => {
       result += `\n  - ${key}: ${dataOfFile1[key]}\n  + ${key}: ${dataOfFile2[key]}`;
     }
   });
-
   console.log(`{${result}\n}`);
   return `{${result}\n}`;
 };
