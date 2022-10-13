@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { program } from 'commander';
-import getFilesDifference from '../__fixtures__/getDifference.js';
+import getDeepDifference from '../__fixtures__/getDeepDifference.js';
+//import getFilesDifference from '../__fixtures__/getDifference.js';
 
 program
   .version('0.0.1')
@@ -8,6 +9,6 @@ program
   .argument('<filepath2>')
   .description('Compares two configuration files and shows a difference.')
   .option('-f, --format <type>', 'output format')
-  .action(getFilesDifference);
+  .action(getDeepDifference);
 
 program.parse();

@@ -11,7 +11,19 @@ if (!_.isObject(mergedObject[key])) {
 */
 
 const unchanged = (key, values) => {
-  return `{\n${key} : ${values}\n}`;
+  return `${key} : ${values}\n`;
 };
 
-export { unchanged };
+const added = (key, values) => {
+  return `+${key} : ${values}\n`;
+};
+
+const removed = (key, values) => {
+  return `-${key} : ${values}\n`;
+};
+
+const changed = (key, values1, values2) => {
+  return `-${key} : ${values1}\n+${key} : ${values2}\n`;
+};
+
+export { unchanged, added, removed, changed };

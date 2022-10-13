@@ -1,9 +1,10 @@
 import _ from 'lodash';
 import getFilesData from './parsing.js';
-import { unchanged } from './stylish.js';
+import { added, removed, unchanged, changed } from './stylish.js';
 
 const obj1 = {
   "lala": true,
+  "tata": false,
   "group1": {
     "first": null,
   },
@@ -20,37 +21,68 @@ const obj2 = {
 const getFilesDifference = (obj1, obj2) => {
   const deepDataOfFile1 = _.cloneDeep(obj1);
   const deepDataOfFile2 = _.cloneDeep(obj2);
-  const mergedObject = _.merge(deepDataOfFile1, deepDataOfFile2);
-  console.log(mergedObject);
-  let result = '';
+  const mergedDataOfObject = _.merge(deepDataOfFile1, deepDataOfFile2);
+  console.log(obj1);
+  console.log(obj2);
 
-  const getDeepDifference = (mergedObject) => {
-    if (_.isObject(mergedObject)) {
-      const sortedKeys = Object.keys(mergedObject).sort();
-      sortedKeys.map(getDeepDifference);
+  const getDeepDifference = (data, deth) => {
+    if (typeof data !== 'object' || data === null) {
+      return String(data);
     }
 
-    if (!_.isObject(mergedObject)) {
-      console.log(mergedObject);
-      if (obj1[mergedObject] === obj2[mergedObject]) {
-        result += 'unchanged\n';
-      }
-      if (obj1[mergedObject] === undefined) {
-        result += 'added\n';
-      }
-      if (obj1[mergedObject] !== obj2[mergedObject]) {
-        result += 'changed\n';
-      }
-      if (obj2[mergedObject] === undefined) {
-        result += 'removed\n';
-      }
-    }
+    const indentation = ' '.repeat(deth);
 
+    const lines = Object.entries(data);
+    const preresult = lines.map(([key, val]) => {
+      if (obj1[data] === obj2[data]) {
+        return `${indentation}  ${key}: ${getDeepDifference(val, deth + 1)}`;
+      }
+      if (obj1[key] === undefined) {
+        return `${indentation}+ ${key}: ${getDeepDifference(val, deth + 1)}`;
+      }
+      if (obj2[key] === undefined) {
+        return `${indentation}- ${key}: ${getDeepDifference(val, deth + 1)}`;
+      }
+      if (obj1[key] !== obj2[key]) {
+        return ` ${indentation} ${key}: ${getDeepDifference(val, deth + 1)}`;
+      } else {
+        throw new Error ('this is wrong')
+      }
+
+  });
+    const result = ['{', ...preresult, `${indentation}}`].join('\n')
     return result;
   };
-
-  return getDeepDifference(mergedObject);
+  return getDeepDifference(mergedDataOfObject, 1);
 };
 
-getFilesDifference(obj1, obj2);
+
+
+
+
+
+
+
+
+  /*
+  const getDeepDifference = (mergedObject) => {
+      if (obj1[mergedObject] === obj2[mergedObject]) {
+        result += unchanged(mergedObject, mergedDataOfObject[mergedObject]);
+      }
+      if (obj1[mergedObject] === undefined) {
+        result += added(mergedObject, mergedDataOfObject[mergedObject]);
+      }
+      if (obj1[mergedObject] !== obj2[mergedObject]) {
+        result += changed(mergedObject, obj1[mergedObject], obj2[mergedObject]);
+      }
+      if (obj2[mergedObject] === undefined) {
+        result += removed(mergedObject, mergedDataOfObject[mergedObject]);
+      }
+      return result;
+    }
+    return getDeepDifference(mergedDataOfObject);
+  };
+*/
 console.log(getFilesDifference(obj1, obj2));
+
+export default getFilesDifference;
