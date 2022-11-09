@@ -1,25 +1,25 @@
 import _ from 'lodash';
 
-const createIndent = (level) => {
+const addIndent = (level) => {
   const replacer = '  ';
-  const spacesCount = 2;
-  const indentSize = level * spacesCount;
+  const spaseCount = 2;
+  const indentention = level * spaseCount;
 
   const indents = {
-    openBracket: replacer.repeat(indentSize - 1),
-    closeBracket: replacer.repeat(indentSize - spacesCount),
+    openBracket: replacer.repeat(indentention - 1),
+    closeBracket: replacer.repeat(indentention - spaseCount),
   };
 
   return indents;
 };
 
-const stringify = (val, depth) => {
-  if (!_.isObject(val)) {
-    return String(val);
+const stringify = (item, depth) => {
+  if (!_.isObject(item)) {
+    return String(item);
   }
-  const indents = createIndent(depth);
+  const indents = addIndent(depth);
 
-  const lines = Object.entries(val).map(([key, value]) => {
+  const lines = Object.entries(item).map(([key, value]) => {
     if (!_.isObject(value)) {
       return `${indents.openBracket}  ${key}: ${value}`;
     }
@@ -31,7 +31,7 @@ const stringify = (val, depth) => {
 };
 
 const stylish = (tree, depth = 1) => {
-  const indents = createIndent(depth);
+  const indents = addIndent(depth);
 
   const items = tree.map((item) => {
     const makeValue = stringify(item.value, depth + 1);
@@ -51,6 +51,7 @@ const stylish = (tree, depth = 1) => {
         throw new Error('Unknown type.');
     }
   });
+
   return ['{', ...items, `${indents.closeBracket}}`].join('\n');
 };
 
