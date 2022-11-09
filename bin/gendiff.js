@@ -1,14 +1,12 @@
 #!/usr/bin/env node
 import { program } from 'commander';
-import getDeepDifference from '../__fixtures__/getDeepDifference.js';
-//import getFilesDifference from '../__fixtures__/getDifference.js';
+import genDiff from './index.js';
 
 program
   .version('0.0.1')
-  .argument('<filepath1>')
-  .argument('<filepath2>')
+  .arguments('<filepath1> <filepath2>')
   .description('Compares two configuration files and shows a difference.')
   .option('-f, --format <type>', 'output format')
-  .action(getDeepDifference);
+  .action((filepath1, filepath2) => console.log(genDiff(filepath1, filepath2)));
 
 program.parse();

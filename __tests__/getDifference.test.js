@@ -1,56 +1,25 @@
-import getFilesDifference from '../__fixtures__/getDifference.js';
+import { test, expect } from '@jest/globals';
+import { dirname, resolve } from 'path';
+import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
 
-const actualData = `{
-  common: {
-    + follow: false
-      setting1: Value 1
-    - setting2: 200
-    - setting3: true
-    + setting3: null
-    + setting4: blah blah
-    + setting5: {
-          key5: value5
-      }
-      setting6: {
-          doge: {
-            - wow: 
-            + wow: so much
-          }
-          key: value
-        + ops: vops
-      }
-  }
-  group1: {
-    - baz: bas
-    + baz: bars
-      foo: bar
-    - nest: {
-          key: value
-      }
-    + nest: str
-  }
-- group2: {
-      abc: 12345
-      deep: {
-          id: 45
-      }
-  }
-+ group3: {
-      deep: {
-          id: {
-              number: 45
-          }
-      }
-      fee: 100500
-  }
-}`;
+import genDiff from '../bin/index.js';
 
-test('test make difference json format file', () => {
-  const resultForJsonFormat = getFilesDifference('file1.json', 'file2.json');
-  expect(resultForJsonFormat).toEqual(actualData);
-});
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-test('test make difference yml format file', () => {
-  const resultForYmlFormat = getFilesDifference('file1.yml', 'file2.yml');
-  expect(resultForYmlFormat).toEqual(actualData);
+const getFixturePath = (filename) => resolve(__dirname, '..', '__fixtures__', filename);
+
+const readFile = (filename) => readFileSync(getFixturePath(filename), 'utf-8');
+
+const expectedResultStylish = readFile('fileForCompare.txt');
+
+const formatsFiles = ['json', 'yml'];
+
+test.each(formatsFiles)('diff formats of files (.json .yml)', (extension) => {
+  const fileName1 = `${process.cwd()}/__fixtures__/file1.${extension}`;
+  const fileName2 = `${process.cwd()}/__fixtures__/file2.${extension}`;
+
+  expect(genDiff(fileName1, fileName2, 'stylish')).toEqual(expectedResultStylish);
+  expect(genDiff(fileName1, fileName2)).toEqual(expectedResultStylish);
 });
