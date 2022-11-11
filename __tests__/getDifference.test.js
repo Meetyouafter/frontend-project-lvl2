@@ -12,7 +12,8 @@ const getFixturePath = (filename) => resolve(__dirname, '..', '__fixtures__', fi
 
 const readFile = (filename) => readFileSync(getFixturePath(filename), 'utf-8');
 
-const expectedResultStylish = readFile('fileForCompare.txt');
+const expectedResultStylish = readFile('stylishCompare.txt');
+const expectedResultPlain = readFile('plainCompare.txt');
 
 const formatsFiles = ['json', 'yml'];
 
@@ -21,5 +22,7 @@ test.each(formatsFiles)('diff formats of files (.json .yml)', (extension) => {
   const fileName2 = `${process.cwd()}/__fixtures__/file2.${extension}`;
 
   expect(genDiff(fileName1, fileName2, 'stylish')).toEqual(expectedResultStylish);
-  expect(genDiff(fileName1, fileName2)).toEqual(expectedResultStylish);
+  expect(genDiff(fileName1, fileName2, 'plain')).toEqual(expectedResultPlain);
 });
+
+//  expect(genDiff(fileName1, fileName2)).toEqual(expectedResultStylish);
