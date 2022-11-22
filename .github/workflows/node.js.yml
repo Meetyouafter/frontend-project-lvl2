@@ -29,7 +29,7 @@ env:
         coverageCommand: yarn coverage
         TEST_COVERAGE: ${{ secrets.TEST_COVERAGE }}
         cache: 'npm'
-    - run: make install
+    - run: npm ci
     - run: make lint
     - run: make test
     - run: make test-coverage
