@@ -11,10 +11,10 @@ const getFixturePath = (filename) => resolve(__dirname, '..', '__fixtures__', fi
 
 const readFile = (filename) => readFileSync(getFixturePath(filename), 'utf-8');
 
-const formatsFiles = ['json', 'yml', 'yaml'];
+const formatsFiles = ['json', 'yml'];
 
 test.each(formatsFiles)(
-  'diff formats of files (.json .yml .yaml)',
+  'diff formats of files (.json .yml)',
   (extension) => {
     const expectedResultStylish = readFile('stylishCompare.txt');
     const expectedResultPlain = readFile('plainCompare.txt');
