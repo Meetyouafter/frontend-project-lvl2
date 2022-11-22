@@ -2,12 +2,10 @@ import { resolve, extname } from 'path';
 import { readFileSync } from 'fs';
 import parsingFile from './parsingFile.js';
 import treeBuilder from './treeBuilder.js';
-import format from '../formatters/index.js';
+import format from './formatters/index.js';
 
 const getFormat = (filepath) => extname(filepath).slice(1);
-
 const getFixturePath = (filepath) => resolve(process.cwd(), filepath);
-
 const readFile = (filepath) => readFileSync(getFixturePath(filepath, 'utf-8'));
 
 const genDiff = (filepath1, filepath2, formatName) => {
