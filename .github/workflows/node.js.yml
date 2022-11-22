@@ -22,7 +22,8 @@ on:
 env:
   CI: true
 
-jobs: build:
+jobs: 
+  build:
   runs-on: ubumtu-latest
 
   steps:
