@@ -14,7 +14,7 @@ const format = (tree, formatName) => {
       return json(tree);
     }
     default:
-      throw new Error('Invalid format.');
+      throw new Error(`Invalid file format! Your format is ${formatName}.Try supported format.`);
   }
 };
 
