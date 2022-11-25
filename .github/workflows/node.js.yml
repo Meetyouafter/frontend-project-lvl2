@@ -32,4 +32,4 @@ jobs:
         CC_TEST_REPORTER_ID: ${{ secrets.TEST_COVERAGE }}
       with:
         coverageCommand: npm run coverage
-      debug: true
+        debug: true
