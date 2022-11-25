@@ -9,7 +9,7 @@ const parsers = (content, formatName) => {
     case 'yaml':
       return load(content);
     default:
-      throw new Error(`Invalid file format! Your format is ${formatName}.Try supported format.`);
+      throw new Error(`Invalid file format! Your format is ${formatName}.Use thees formats: JSON, YML, YAML.`);
   }
 };
 
