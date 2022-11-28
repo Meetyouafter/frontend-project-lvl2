@@ -20,4 +20,6 @@ const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   return format(tree, formatName);
 };
 
+//  console.log(genDiff('../__fixtures__/file1.yml', '../__fixtures__/file2.yml', 'json'));
+
 export default genDiff;
