@@ -12,3 +12,6 @@ test-coverage:
 
 publish:
 	npm publish
+
+gendiff:
+	node bin/gendiff.js
