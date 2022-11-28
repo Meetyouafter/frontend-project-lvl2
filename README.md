@@ -10,9 +10,32 @@
 [![Build Status](https://app.travis-ci.com/Meetyouafter/frontend-project-lvl2.svg?branch=main)](https://app.travis-ci.com/Meetyouafter/frontend-project-lvl2)
 
 
+<b>Добро пожаловать в 'Вычислитель отличий!'</b>
 
-<b>Example with JSON file</b>
-<a href="https://asciinema.org/a/spJziyuDXq9yqIuZj8EyknBbS" target="_blank"><img src="https://asciinema.org/a/spJziyuDXq9yqIuZj8EyknBbS.svg" /></a>
+В проекте реализовано сравнение двух файлов форматов JSON, YAML, YML с представлением итога сравнения в трёх возможных вариантах:
+'stylish' — посрочное сравнение файлов с отображением различий с помощью "+" или "-".  
+'plain' — текстовое описание атрибутов с необходимыми комментариями.  
+'json' — отражение разницы между файлами в формате JSON.
 
-<b>Example with yml file</b>
-<a href="https://asciinema.org/a/dQD5aqYICBO91fZzwLETTWIan" target="_blank"><img src="https://asciinema.org/a/dQD5aqYICBO91fZzwLETTWIan.svg" /></a>
+<b>Для локального запуска программы и сравнения файлов:</b>
+- Установите Node.js последней версии;
+- Склонируйте репозиторий проекта; 
+- После первого клонирования репозитория используйте команду install;
+- Для установки пакета из операционной системы используйте команду npm link;
+- Поместите необходимые для сравнения файлы в папку __fixtures__ (при желании вы можете использовать любое место хранения);
+- наберите команду ``` gendiff --format filepath1 filepath2```
+  где: ```--format``` - получение сравнения в необходимом формате из предложенных;
+       ```filepath1``` - путь до первого файла;
+       ```filepath2``` - путь до второго файла.
+       
+  Например: ```gendiff --format 'plain' ./__fixtures__/file1.json ./__fixtures__/file2.json```
+  
+  <b>Example stylish compare files with JSON and YML formats</b>
+<script id="asciicast-3JWKRsuoKAyvX5T3sB2GSsPlr" src="https://asciinema.org/a/3JWKRsuoKAyvX5T3sB2GSsPlr.js" async></script>
+
+<b>Example plain compare files with JSON and YML formats</b>
+<script id="asciicast-Wb3mOzDvzBQ5DVKDl1CGntJuX" src="https://asciinema.org/a/Wb3mOzDvzBQ5DVKDl1CGntJuX.js" async></script>
+
+<b>Example json compare files with JSON and YML formats</b>
+<script id="asciicast-cuCBd8FSoyXAgueqhMGHRdhh2" src="https://asciinema.org/a/cuCBd8FSoyXAgueqhMGHRdhh2.js" async></script>
+  
