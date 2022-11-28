@@ -1,12 +1,5 @@
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/Meetyouafter/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/Meetyouafter/frontend-project-lvl2/actions)
-
-<a href="https://codeclimate.com/github/Meetyouafter/frontend-project-lvl2/maintainability"><img src="https://api.codeclimate.com/v1/badges/ac7f02a9bf1ff85dc58e/maintainability" /></a>
-
-<a href="https://codeclimate.com/github/Meetyouafter/frontend-project-lvl2/test_coverage"><img src="https://api.codeclimate.com/v1/badges/ac7f02a9bf1ff85dc58e/test_coverage" /></a>
-
-[![Node.js CI](https://github.com/Meetyouafter/frontend-project-lvl2/actions/workflows/node.js.yml/badge.svg)](https://github.com/Meetyouafter/frontend-project-lvl2/actions/workflows/node.js.yml)
-
+### Tests and linter status:
+[![Actions Status](https://github.com/Meetyouafter/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/Meetyouafter/frontend-project-lvl2/actions) <a href="https://codeclimate.com/github/Meetyouafter/frontend-project-lvl2/maintainability"><img src="https://api.codeclimate.com/v1/badges/ac7f02a9bf1ff85dc58e/maintainability" /></a> <a href="https://codeclimate.com/github/Meetyouafter/frontend-project-lvl2/test_coverage"><img src="https://api.codeclimate.com/v1/badges/ac7f02a9bf1ff85dc58e/test_coverage" /></a> [![Node.js CI](https://github.com/Meetyouafter/frontend-project-lvl2/actions/workflows/node.js.yml/badge.svg)](https://github.com/Meetyouafter/frontend-project-lvl2/actions/workflows/node.js.yml)
 
 <b>Добро пожаловать в 'Вычислитель отличий!'</b>
 
@@ -30,13 +23,11 @@
 
 
 <b>Example stylish compare files with JSON and YML formats</b>
-<script id="asciicast-3JWKRsuoKAyvX5T3sB2GSsPlr" src="https://asciinema.org/a/3JWKRsuoKAyvX5T3sB2GSsPlr.js" async></script>
-
+[![asciicast](https://asciinema.org/a/3JWKRsuoKAyvX5T3sB2GSsPlr.svg)](https://asciinema.org/a/3JWKRsuoKAyvX5T3sB2GSsPlr)
 
 <b>Example plain compare files with JSON and YML formats</b>
-<script id="asciicast-Wb3mOzDvzBQ5DVKDl1CGntJuX" src="https://asciinema.org/a/Wb3mOzDvzBQ5DVKDl1CGntJuX.js" async></script>
-
+[![asciicast](https://asciinema.org/a/Wb3mOzDvzBQ5DVKDl1CGntJuX.svg)](https://asciinema.org/a/Wb3mOzDvzBQ5DVKDl1CGntJuX)
 
 <b>Example json compare files with JSON and YML formats</b>
-<script id="asciicast-cuCBd8FSoyXAgueqhMGHRdhh2" src="https://asciinema.org/a/cuCBd8FSoyXAgueqhMGHRdhh2.js" async></script>
+[![asciicast](https://asciinema.org/a/cuCBd8FSoyXAgueqhMGHRdhh2.svg)](https://asciinema.org/a/cuCBd8FSoyXAgueqhMGHRdhh2)  
   
