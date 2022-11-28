@@ -7,8 +7,6 @@
 
 [![Node.js CI](https://github.com/Meetyouafter/frontend-project-lvl2/actions/workflows/node.js.yml/badge.svg)](https://github.com/Meetyouafter/frontend-project-lvl2/actions/workflows/node.js.yml)
 
-[![Build Status](https://app.travis-ci.com/Meetyouafter/frontend-project-lvl2.svg?branch=main)](https://app.travis-ci.com/Meetyouafter/frontend-project-lvl2)
-
 
 <b>Добро пожаловать в 'Вычислитель отличий!'</b>
 
@@ -29,12 +27,15 @@
        ```filepath2``` - путь до второго файла.
        
   Например: ```gendiff --format 'plain' ./__fixtures__/file1.json ./__fixtures__/file2.json```
-  
-  <b>Example stylish compare files with JSON and YML formats</b>
+
+
+<b>Example stylish compare files with JSON and YML formats</b>
 <script id="asciicast-3JWKRsuoKAyvX5T3sB2GSsPlr" src="https://asciinema.org/a/3JWKRsuoKAyvX5T3sB2GSsPlr.js" async></script>
+
 
 <b>Example plain compare files with JSON and YML formats</b>
 <script id="asciicast-Wb3mOzDvzBQ5DVKDl1CGntJuX" src="https://asciinema.org/a/Wb3mOzDvzBQ5DVKDl1CGntJuX.js" async></script>
+
 
 <b>Example json compare files with JSON and YML formats</b>
 <script id="asciicast-cuCBd8FSoyXAgueqhMGHRdhh2" src="https://asciinema.org/a/cuCBd8FSoyXAgueqhMGHRdhh2.js" async></script>
